@@ -133,6 +133,7 @@ export class GameContainer extends React.PureComponent<
     return (
       <>
         <Header
+          address={this.props.address}
           rewards={accountInfo.reward}
           refereeCount={accountInfo.referredCount}
         />

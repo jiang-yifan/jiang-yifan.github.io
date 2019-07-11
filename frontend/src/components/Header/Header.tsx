@@ -1,7 +1,9 @@
 import React from 'react'
 import './Header.css'
 import { ReactComponent as ArrowCircle } from '../../assets/ic_arrow-down-circle.svg'
+import ReferralRules from '../ReferralRules/ReferralRules'
 interface IHeaderProps {
+  address: string
   rewards: string
   refereeCount: string
 }
@@ -33,19 +35,28 @@ export class Header extends React.PureComponent<IHeaderProps, IHeaderState> {
   render() {
     const { open } = this.state
     return (
-      <div className="header">
-        <div>Double or Nothing</div>
-        <div className="header-reward">
-          <div>Reward</div>
-          <div className="reward-container">
-            {this.calcualteEther(this.props.rewards)}
+      <>
+        <div className="header">
+          <div>Double or Nothing</div>
+          <div className="header-reward">
+            <div>Reward</div>
+            <div className="reward-container">
+              {this.calcualteEther(this.props.rewards)}
+            </div>
+            <ArrowCircle
+              onClick={this.toggle}
+              className={`arrow-circle ${open ? 'open' : ''}`}
+            />
           </div>
-          <ArrowCircle
-            onClick={this.toggle}
-            className={`arrow-circle ${open ? 'open' : ''}`}
-          />
         </div>
-      </div>
+        {open && (
+          <ReferralRules
+            address={this.props.address}
+            reward={this.calcualteEther(this.props.rewards)}
+            refereeCount={this.props.refereeCount}
+          />
+        )}
+      </>
     )
   }
 }
