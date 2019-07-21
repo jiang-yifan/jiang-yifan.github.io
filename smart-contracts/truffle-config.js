@@ -54,11 +54,8 @@ module.exports = {
 
     thunder: {
       provider: function() {
-        return new HDWallet(
-          // Use Your Mnemonic here
-          'neglect honey response curve meat view leader village private action clock reason',
-          'https://mainnet-rpc.thundercore.com'
-        )
+        return new HDWallet('neglect honey response curve meat view leader village private action clock reason',
+          'https://mainnet-rpc.thundercore.com')
       },
       network_id: 108
     }
