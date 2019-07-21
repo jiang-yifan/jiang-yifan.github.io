@@ -56,7 +56,7 @@ module.exports = {
       provider: function() {
         return new HDWallet(
           // Use Your Mnemonic here
-          '',
+          'neglect honey response curve meat view leader village private action clock reason',
           'https://mainnet-rpc.thundercore.com'
         )
       },
