@@ -31,14 +31,18 @@ export class App extends React.PureComponent<IAppProps, IAppState> {
     return (
       <div className="app">
         <ContractLoader
+          contractData={[
+            {
+              address: process.env.REACT_APP_CONTRACT_ADDRESS,
+              signer: params.signer!,
+              abi
+            }
+          ]}
           renderEnabled={contractParams =>
             this.renderGame(contractParams, params.address)
           }
           renderLoading={this.renderLoading}
           renderUnavailable={this.renderUnavailable}
-          signer={params.signer!}
-          contractAddress={process.env.REACT_APP_CONTRACT_ADDRESS}
-          abi={abi}
         />
       </div>
     )
@@ -53,7 +57,14 @@ export class App extends React.PureComponent<IAppProps, IAppState> {
   }
 
   renderGame(params: IContractContext, address: string) {
-    return <GameContainer address={address} contract={params.contract} />
+    return (
+      <GameContainer
+        address={address}
+        contract={
+          params.contractInfo[process.env.REACT_APP_CONTRACT_ADDRESS].contract
+        }
+      />
+    )
   }
 
   render() {
