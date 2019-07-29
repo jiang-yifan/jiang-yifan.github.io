@@ -3,6 +3,7 @@ import './Game.css'
 import Coin from '../Coin/Coin'
 import Display from '../Display/Display'
 import cardSrc from '../../assets/ig_coin_card.png'
+import CoinPicker from '../CoinPicker/CoinPicker'
 
 interface IGameProps {
   playGame(): any
@@ -41,6 +42,7 @@ export class Game extends React.PureComponent<IGameProps, IGameState> {
     const { animating } = this.state
     return (
       <div className="game-container">
+        <CoinPicker />
         <div className="display-container">
           <Display balance={balance} betAmount={betAmount.toString()} />
         </div>
