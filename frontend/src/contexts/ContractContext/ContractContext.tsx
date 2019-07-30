@@ -20,16 +20,12 @@ interface IContractState {
 }
 
 interface IContractContextState {
-  contractInfo: {
-    [key: string]: IContractState
-  }
+  [key: string]: IContractState
 }
 
 export type IContractContext = IContractContextState
 
-const { Consumer, Provider } = React.createContext<IContractContext>({
-  contractInfo: {}
-})
+const { Consumer, Provider } = React.createContext<IContractContext>({})
 
 export class ContractProvider extends React.PureComponent<
   IContractContextProps,
@@ -57,45 +53,35 @@ export class ContractProvider extends React.PureComponent<
         [k: string]: IContractState
       }
     )
-    this.state = {
-      contractInfo
-    }
+    this.state = contractInfo
 
     props.contracts.forEach(contractData => {
       if (contractData.checkOnLoad) {
-        this.loadContract(contractData.address)
+        this.loadContract(contractData.address, true)
       }
     })
   }
 
-  private loadContract = (address: string) => {
-    const { contractInfo } = this.state
-    const contractData = contractInfo[address]
+  private loadContract = (address: string, initializing?: boolean) => {
+    const contractData = this.state[address]
     if (!contractData) {
       return
     }
-    this.setState({
-      contractInfo: {
-        ...contractInfo,
+    if (!initializing) {
+      this.setState({
         [address]: { ...contractData, loading: true, error: false }
-      }
-    })
+      })
+    }
     contractData.contract
       .deployed()
       .then(() => {
         this.setState({
-          contractInfo: {
-            ...contractInfo,
-            [address]: { ...contractData, loading: false }
-          }
+          [address]: { ...contractData, loading: false }
         })
       })
       .catch(() => {
         this.setState({
-          contractInfo: {
-            ...contractInfo,
-            [address]: { ...contractData, loading: false, error: true }
-          }
+          [address]: { ...contractData, loading: false, error: true }
         })
       })
   }

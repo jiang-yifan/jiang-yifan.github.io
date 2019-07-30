@@ -6,6 +6,8 @@ import ContractLoader from '../ContractLoader/ContractLoader'
 import { IWeb3Context } from '../../contexts/Web3Context/Web3Context'
 import { IContractContext } from '../../contexts/ContractContext/ContractContext'
 import GameContainer from '../../containers/GameContainer/GameContainer'
+import config from '../../config'
+import { abi as Erc677Abi } from './ERC677.json'
 
 interface IAppProps {}
 interface IAppState {}
@@ -33,9 +35,14 @@ export class App extends React.PureComponent<IAppProps, IAppState> {
         <ContractLoader
           contractData={[
             {
-              address: process.env.REACT_APP_CONTRACT_ADDRESS,
+              address: config.doubleContract,
               signer: params.signer!,
               abi
+            },
+            {
+              address: config.TTDai,
+              signer: params.signer!,
+              abi: Erc677Abi
             }
           ]}
           renderEnabled={contractParams =>
@@ -60,9 +67,7 @@ export class App extends React.PureComponent<IAppProps, IAppState> {
     return (
       <GameContainer
         address={address}
-        contract={
-          params.contractInfo[process.env.REACT_APP_CONTRACT_ADDRESS].contract
-        }
+        contract={params[config.doubleContract].contract}
       />
     )
   }

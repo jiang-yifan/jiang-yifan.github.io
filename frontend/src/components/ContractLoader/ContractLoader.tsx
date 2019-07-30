@@ -40,9 +40,11 @@ export class ContractLoader extends React.PureComponent<
   }
 
   renderContractState = (params: IContractContext) => {
-    if (Object.values(params).find(b => b.loading)) {
+    // @ts-ignore
+    if (Object.keys(params).find(key => params[key].loading)) {
       return this.props.renderLoading(params)
-    } else if (Object.values(params).find(b => b.error)) {
+      // @ts-ignore
+    } else if (Object.keys(params).find(key => params[key].error)) {
       return this.props.renderUnavailable(params)
     }
     return this.props.renderEnabled(params)
