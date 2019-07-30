@@ -8,6 +8,7 @@ import { IContractContext } from '../../contexts/ContractContext/ContractContext
 import GameContainer from '../../containers/GameContainer/GameContainer'
 import config from '../../config'
 import { abi as Erc677Abi } from './ERC677.json'
+import { ContractEnum } from '../../ContractEnum'
 
 interface IAppProps {}
 interface IAppState {}
@@ -35,12 +36,17 @@ export class App extends React.PureComponent<IAppProps, IAppState> {
         <ContractLoader
           contractData={[
             {
-              address: config.doubleContract,
+              address: config[ContractEnum.DoubleOrNothing],
               signer: params.signer!,
               abi
             },
             {
-              address: config.TTDai,
+              address: config[ContractEnum.TTDai],
+              signer: params.signer!,
+              abi: Erc677Abi
+            },
+            {
+              address: config[ContractEnum.TTUsdt],
               signer: params.signer!,
               abi: Erc677Abi
             }
@@ -67,7 +73,12 @@ export class App extends React.PureComponent<IAppProps, IAppState> {
     return (
       <GameContainer
         address={address}
-        contract={params[config.doubleContract].contract}
+        contracts={{
+          [ContractEnum.DoubleOrNothing]:
+            params[config[ContractEnum.DoubleOrNothing]].contract,
+          [ContractEnum.TTUsdt]: params[config[ContractEnum.TTUsdt]].contract,
+          [ContractEnum.TTDai]: params[config[ContractEnum.TTDai]].contract
+        }}
       />
     )
   }

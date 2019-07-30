@@ -35,6 +35,7 @@
 }
 
 .coin-picker-button.active {
+  cursor: default;
   filter: grayscale(0%);
   border-color: rgb(254,159,37);
   background-color: rgb(255,197,41);
