@@ -4,10 +4,12 @@ import { BigNumber, bigNumberify, parseEther } from 'ethers/utils'
 import Game from '../../components/Game/Game'
 import Header from '../../components/Header/Header'
 import { ContractEnum } from '../../ContractEnum'
+import { TransactionReceipt, TransactionResponse } from 'ethers/providers'
 
 interface IErc677GameContainerProps {
   contract: Contract
   address: string
+  gameAddress: string
   contractName: ContractEnum
   changeContract(coin: ContractEnum): any
 }
@@ -70,31 +72,34 @@ export class Erc677GameContainer extends React.PureComponent<
 
   play = (val: number) => {
     this.setState({ disabled: true })
-    const params: any = [
-      {
-        value: parseEther(val.toString()).toHexString(),
-        // because there is an if else based on time, the estimate gas will fail and teh transaction will fail
-        // you must set the gas limit
-        gasLimit: bigNumberify('200000').toHexString()
-      }
-    ]
-    // this.props.contract[referrer ? 'bet(address)' : 'bet()'](...params)
-    //   .then((trans: TransactionResponse) => {
-    //     this.setState({ flipping: true })
-    //     return trans.wait()
-    //   })
-    //   .then((receipt: TransactionReceipt) => {
-    //     //@ts-ignore
-    //     const event = receipt.events.find(evt => evt.event === 'BetSettled')
-    //
-    //     this.setState({
-    //       flipping: false,
-    //       win: event.args.winnings.toString() !== '0'
-    //     })
-    //   })
-    //   .finally(() => {
-    //     this.setState({ disabled: false, flipping: false })
-    //   })
+    this.props.contract
+      .transferAndCall(
+        this.props.gameAddress,
+        parseEther(val.toString()),
+        '0xfae',
+        { gasLimit: bigNumberify('100000').toHexString() }
+      )
+      .then((trans: TransactionResponse) => {
+        this.setState({ flipping: true })
+        return trans.wait()
+      })
+      .then((receipt: TransactionReceipt) => {
+        //@ts-ignore
+        const didWin = !!receipt.events.find(
+          //@ts-ignore
+          evt =>
+            evt.event === 'Transfer' &&
+            evt.args.to.toLowerCase() === this.props.address.toLowerCase()
+        )
+
+        this.setState({
+          flipping: false,
+          win: didWin
+        })
+      })
+      .finally(() => {
+        this.setState({ disabled: false, flipping: false })
+      })
   }
 
   playGame = () => {

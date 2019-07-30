@@ -43,6 +43,7 @@ export class GameContainer extends React.PureComponent<
     } else if (currentContract === ContractEnum.TTDai) {
       return (
         <Erc677GameContainer
+          gameAddress={contracts[ContractEnum.DoubleOrNothing].address}
           contractName={ContractEnum.TTDai}
           contract={contracts[ContractEnum.TTDai]}
           address={address}
@@ -52,6 +53,7 @@ export class GameContainer extends React.PureComponent<
     } else {
       return (
         <Erc677GameContainer
+          gameAddress={contracts[ContractEnum.DoubleOrNothing].address}
           contractName={ContractEnum.TTUsdt}
           contract={contracts[ContractEnum.TTUsdt]}
           address={address}
