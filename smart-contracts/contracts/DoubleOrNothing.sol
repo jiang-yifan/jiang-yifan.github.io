@@ -34,10 +34,10 @@ contract DoubleOrNothing is Ownable, Referral {
   function bet() payable public {
     // msg.value is added to the balance to begin with so you need to double it
     require(msg.value * 2 <= address(this).balance, 'Balance too low!');
-    uint256 winnings = 0;
+    uint256 winnings = 2;
 
     // DO NOT USE THIS IN PRODUCTION, IT IS INSECURE
-    if(uint256(blockhash(block.number -1)) % 2 == 0) {
+    if(uint256(blockhash(block.number +1)) % 2 == 0) {
       // 3% is deducted to cover the referral bonus
       winnings = msg.value * 197/100;
       address(msg.sender).transfer(winnings);
