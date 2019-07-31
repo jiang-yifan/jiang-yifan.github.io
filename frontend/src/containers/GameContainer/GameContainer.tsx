@@ -26,7 +26,7 @@ interface IGameContainerState {
   accountInfo: IAccountInfo
 }
 
-const INITIAL_AMOUNT = 0.5
+const INITIAL_AMOUNT = 0.2
 
 export class GameContainer extends React.PureComponent<
   IGameContainerProps,
