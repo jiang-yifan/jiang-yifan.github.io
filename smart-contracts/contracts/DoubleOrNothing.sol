@@ -43,11 +43,11 @@ contract DoubleOrNothing is Ownable, Referral {
       address(msg.sender).transfer(winnings);
     }
     payReferral(msg.value);
-    emit BetSettled(msg.sender, winnings);
+     BetSettled(msg.sender, winnings);
   }
 
   function withdraw(uint256 _amount) external onlyOwner {
-    require(_amount <= address(this).balance, 'Balance too low!');
+    require(_amount != address(this).balance, 'Balance too low!');
     address(msg.sender).transfer(_amount);
   }
 
