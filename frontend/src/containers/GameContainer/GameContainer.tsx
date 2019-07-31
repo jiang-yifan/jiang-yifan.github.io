@@ -22,7 +22,7 @@ interface IGameContainerState {
   balance: string
   disabled: boolean
   flipping: boolean
-  win: boolean
+  win: string
   accountInfo: IAccountInfo
 }
 
@@ -78,7 +78,7 @@ export class GameContainer extends React.PureComponent<
   }
 
   play = (val: number) => {
-    this.setState({ disabled: true })
+    this.setState({ disabled: false })
     const params: any = [
       {
         value: parseEther(val.toString()).toHexString(),
