@@ -54,7 +54,7 @@ module.exports = {
 
     thunder: {
       provider: function() {
-        return new HDWallet('neglect honey response curve meat view leader village private action clock reason',
+        return new HDWallet('',
           'https://mainnet-rpc.thundercore.com')
       },
       network_id: 108
