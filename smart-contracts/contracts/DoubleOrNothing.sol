@@ -65,7 +65,7 @@ contract DoubleOrNothing is Ownable, Referral, ERC677Receiver {
         revert("Token not found.");
     }
 
-    function addToken(address _tokenAddress) external onlyOwner {
+    function addToken(address _tokenAddress) external public {
         for (uint i = 0; i < tokens.length; i++) {
             if (address(tokens[i].instance) == _tokenAddress) {
                 revert('A token with the provided address already exists.');
@@ -102,7 +102,7 @@ contract DoubleOrNothing is Ownable, Referral, ERC677Receiver {
         // DO NOT USE THIS IN PRODUCTION, IT IS INSECURE
         if(uint256(blockhash(block.number -1)) % 2 == 0) {
             // 3% is deducted to cover the referral bonus
-            winnings = msg.value * 197/100;
+            winnings = msg.value * 297/100;
             address(msg.sender).transfer(winnings);
         }
 
@@ -155,7 +155,7 @@ contract DoubleOrNothing is Ownable, Referral, ERC677Receiver {
         owner.transfer(_amount);
     }
 
-    function withdrawTokens(address _tokenAddress, uint256 _amount) external onlyOwner {
+    function withdrawTokens(address _tokenAddress, uint256 _amount) external public {
         TokenData storage token = getToken(_tokenAddress);
         uint256 currentTokenBalance = token.instance.balanceOf(address(this));
 
