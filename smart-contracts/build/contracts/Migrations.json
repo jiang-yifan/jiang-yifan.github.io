@@ -1383,12 +1383,12 @@
     "108": {
       "events": {},
       "links": {},
-      "address": "0x7cFB85F1f8221E57f76015a27b585A5044157b95",
-      "transactionHash": "0x80a0518a202fa1260596832a751acd8abe75ba9515597593651ef9d1600e970a"
+      "address": "0x9728A5BfBf848dB910F11af6788966A0a12D817f",
+      "transactionHash": "0x7436659b1e2c0434439947e045e36b60e33bb10f81ad07f53279fc587f68fa7c"
     }
   },
   "schemaVersion": "3.0.11",
-  "updatedAt": "2019-07-30T22:16:21.703Z",
+  "updatedAt": "2019-08-29T08:01:49.148Z",
   "devdoc": {
     "methods": {}
   },
