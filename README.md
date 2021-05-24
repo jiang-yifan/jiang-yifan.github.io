@@ -1,52 +1,44 @@
-THIS IS NOT PRODUCTION READY AND SHOULD NOT BE USED IN ANY WAY IN PRODUCTION.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[DoubleOrNothing](https://jiang-yifan.github.io) is a coin flip game built on Thunder.
+## Available Scripts
 
-# Getting Started
+In the project directory, you can run:
 
-1. Fork this repo
-2. Rename the forked repo as {{Your-github-username}}.github.io
-3. ssh `git clone git@github.com:{{Your-github-username}}/{{Your-github-username}}.github.io.git`
- \
- or 
- \
-https `git clone https://github.com/{{Your-github-username}}/{{Your-github-username}}.github.io.git`
-4. `cd {{Your-github-username}}.git.hub.io.git`
-5. `git commit --allow-empty -m "bump"`
-6. `git push`  
-*Note: If you see the error “push declined due to email privacy restrictions”, you will need to allow command line pushes that expose your email address. This under “Settings”, “Emails”
-7. It will take ~10 mins for Github to create your page. It can be accessed at 
-\
-`https://{{Your-github-username}}.github.io`
-8. While you wait, make sure to have [Metamask](https://metamask.io/) installed
-9. Set it up to a new Custom RPC url: https://mainnet-rpc.thundercore.com
-10. When your page is built, you should be able to play the game
+### `npm start`
 
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-# Understanding the Repo for development
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-### Setup
-We will be using node v8 or node v10
-- `cd smart-contracts`
-- `yarn install` or ` npm install`
-- `cd ../frontend`
-- `yarn install` or `npm install`
-- `yarn start` or `npm run start`
+### `npm test`
 
-### Smart Contracts
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-This project uses [Truffle](https://www.trufflesuite.com) to handle all of the smart contract related work.
+### `npm run build`
 
-In the `/smart-contracts/contracts` folder, you will find `DoubleOrNothing.sol` which contains the game logic.
- 
-After you make any updates to it, you will have to redeploy the contract.
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-`yarn migrate --network development/thunder --reset` or `npm run migrate -- --network development/thunder --reset`
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-** Development points to localhost:8545 [Ganache](https://www.trufflesuite.com/ganache)
- 
-** To deploy on thunder, you must add a mnemonic to `/smart-contracts/truffle-config.js`
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Frontend
-The frontend is built using the [create-react-app](https://github.com/facebook/create-react-app) project with [Typescript](https://www.typescriptlang.org/). 
-To interact with the chain, we use [Ethers.js](https://docs.ethers.io/ethers.js/html/).
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
