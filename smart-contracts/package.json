@@ -1,0 +1,23 @@
+{
+  "name": "DoubleOrNothingContract",
+  "version": "1.0.0",
+  "description": "Smart Contract for double or nothing",
+  "license": "MIT",
+  "scripts": {
+    "migrate": "truffle migrate"
+  },
+  "dependencies": {
+    "@thundercore/referral-solidity": "^1.0.7",
+    "@truffle/hdwallet-provider": "^1.2.2",
+    "openzeppelin-solidity": "^2.5.1",
+    "truffle": "^5.1.22",
+    "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "truffle-flattener": "^1.4.2",
+    "truffle-plugin-save-per-network-deployment-record": "https://github.com/thundercore/truffle-plugin-save-per-network-deployment-record.git"
+  },
+  "engines": {
+    "node": ">=8.0.0 <11.0.0"
+  }
+}

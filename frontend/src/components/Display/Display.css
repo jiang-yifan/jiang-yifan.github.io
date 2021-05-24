@@ -1,0 +1,25 @@
+.display {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.title-container {
+  font-size: 1.25em;
+  color: #ffffff;
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+}
+
+.value {
+  margin-left: 6px;
+}
+
+@media (max-width: 400px) {
+  .title-container {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,79 @@
+.coin-container {
+  transform-style: preserve-3d;
+  transition: 0.5s all;
+  position: relative;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+}
+
+.flipped {
+  transform: rotateX(180deg);
+}
+
+.face {
+  backface-visibility: hidden;
+}
+
+.top-face {
+  transform: translateZ(8px);
+}
+
+.top-back-face {
+  background: #444;
+}
+
+.disk-body {
+  width: 140px;
+  height: 16px;
+  position: absolute;
+  background: #444;
+  backface-visibility: hidden;
+  transform:  translate3d(0,63px,0) rotateX(90deg);
+}
+
+.disk-body.back {
+  background: #938506;
+  transform:  translate3d(0,63px,0) rotateX(90deg) rotateY(180deg);
+}
+
+.disk {
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: #444;
+}
+
+.bottom-front-face {
+  background-size: contain;
+  background-image: url("../../assets/ig_lose_coin.png");
+  transform: translateZ(-8px) rotateX(180deg);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.45);
+}
+
+.bottom-back-face {
+  transform: translateZ(-8px);
+  background: #444;
+}
+
+.half-face-lower {
+  top: 50%;
+  background: #938506;
+}
+
+.half-face-upper {
+  background: #444;
+}
+
+.half-face {
+  position: absolute;
+  height: 50%;
+  width: 100%;
+}
+
+.top-face-front {
+  background-size: contain;
+  background-image: url("../../assets/ig_win_coin.png");
+}

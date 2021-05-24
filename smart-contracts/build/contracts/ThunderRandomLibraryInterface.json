@@ -1,0 +1,249 @@
+{
+  "contractName": "ThunderRandomLibraryInterface",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "rand",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity 0.5.0;\n\ncontract ThunderRandomLibraryInterface {\n    function rand() public returns (uint256);\n}\n",
+  "sourcePath": "/mnt/c/Users/mygamer/micpittser8.github.io/smart-contracts/contracts/ThunderRandomLibraryInterface.sol",
+  "ast": {
+    "absolutePath": "/mnt/c/Users/mygamer/micpittser8.github.io/smart-contracts/contracts/ThunderRandomLibraryInterface.sol",
+    "exportedSymbols": {
+      "ThunderRandomLibraryInterface": [
+        619
+      ]
+    },
+    "id": 620,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 613,
+        "literals": [
+          "solidity",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:22:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 619,
+        "linearizedBaseContracts": [
+          619
+        ],
+        "name": "ThunderRandomLibraryInterface",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "id": 618,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "rand",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 614,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "82:2:2"
+            },
+            "returnParameters": {
+              "id": 617,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 616,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 618,
+                  "src": "101:7:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 615,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "101:7:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "100:9:2"
+            },
+            "scope": 619,
+            "src": "69:41:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 620,
+        "src": "24:88:2"
+      }
+    ],
+    "src": "0:113:2"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "/mnt/c/Users/mygamer/micpittser8.github.io/smart-contracts/contracts/ThunderRandomLibraryInterface.sol",
+      "exportedSymbols": {
+        "ThunderRandomLibraryInterface": [
+          619
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 613,
+        "name": "PragmaDirective",
+        "src": "0:22:2"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            619
+          ],
+          "name": "ThunderRandomLibraryInterface",
+          "scope": 620
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": null,
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "rand",
+              "scope": 619,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 614,
+                "name": "ParameterList",
+                "src": "82:2:2"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 618,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 615,
+                        "name": "ElementaryTypeName",
+                        "src": "101:7:2"
+                      }
+                    ],
+                    "id": 616,
+                    "name": "VariableDeclaration",
+                    "src": "101:7:2"
+                  }
+                ],
+                "id": 617,
+                "name": "ParameterList",
+                "src": "100:9:2"
+              }
+            ],
+            "id": 618,
+            "name": "FunctionDefinition",
+            "src": "69:41:2"
+          }
+        ],
+        "id": 619,
+        "name": "ContractDefinition",
+        "src": "24:88:2"
+      }
+    ],
+    "id": 620,
+    "name": "SourceUnit",
+    "src": "0:113:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.1",
+  "updatedAt": "2021-05-24T03:00:46.500Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

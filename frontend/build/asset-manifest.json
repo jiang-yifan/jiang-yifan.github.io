@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/frontend/build/static/css/main.5cdd85f5.chunk.css",
+    "main.js": "/frontend/build/static/js/main.80246b80.chunk.js",
+    "main.js.map": "/frontend/build/static/js/main.80246b80.chunk.js.map",
+    "runtime-main.js": "/frontend/build/static/js/runtime-main.edbc3831.js",
+    "runtime-main.js.map": "/frontend/build/static/js/runtime-main.edbc3831.js.map",
+    "static/js/2.e51d2b78.chunk.js": "/frontend/build/static/js/2.e51d2b78.chunk.js",
+    "static/js/2.e51d2b78.chunk.js.map": "/frontend/build/static/js/2.e51d2b78.chunk.js.map",
+    "index.html": "/frontend/build/index.html",
+    "precache-manifest.0ad66f99231536267b41e4d6bb4136c5.js": "/frontend/build/precache-manifest.0ad66f99231536267b41e4d6bb4136c5.js",
+    "service-worker.js": "/frontend/build/service-worker.js",
+    "static/css/main.5cdd85f5.chunk.css.map": "/frontend/build/static/css/main.5cdd85f5.chunk.css.map",
+    "static/media/App.css": "/frontend/build/static/media/bg.03b4fd11.jpg",
+    "static/media/ic_arrow-down-circle.3d1db861.svg": "/frontend/build/static/media/ic_arrow-down-circle.3d1db861.svg",
+    "static/media/ig_coin_card.png": "/frontend/build/static/media/ig_coin_card.968dcb99.png",
+    "static/media/Coin.css": "/frontend/build/static/media/ig_win_coin.44207f94.png",
+    "static/media/tt-usdt.png": "/frontend/build/static/media/tt-usdt.6ef85566.png"
+  }
+}
